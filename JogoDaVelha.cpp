@@ -1,57 +1,57 @@
 #include <stdio.h>
 #include <iostream>
 #include <cstring>
-#include <stdlib.h>s
+#include <stdlib.h>
 
 using namespace std;
 
-char jogador1[50];
-char jogador2[50];
+string jogador1;
+string jogador2;
 char matriz[3][3];
-char jogada[1];
+string jogada;
 bool turnoPrimeiro = false;
 
-void iniciaJogo(char jogador1[], char jogador2[]);
+void iniciaJogo(string jogador1, string jogador2);
 void exibeJogo();
 bool isVitoria();
-void jogaX(char posicao[]);
-void jogaO(char posicao[]);
+void jogaX(string posicao);
+void jogaO(string posicao[]);
 void iniciaMatriz();
-int main() {
 
+int main() {
 
   iniciaJogo(jogador1, jogador2);
 
 
-  std::cout << "a | b | c" << '\n';
-  std::cout << "_________" << '\n';
-  std::cout << "d | e | f" << '\n'; // apenas esqueleto do jogo de como seria
-  std::cout << "_________" << '\n';
-  std::cout << "g | h | i" << '\n';
+  printf("%s\n", "a | b | c");
+  printf("%s\n", "---------");
+  printf("%s\n", "d | e | f");
+  printf("%s\n", "---------");
+  printf("%s\n", "g | h | i");
 
   iniciaMatriz();
 
   while(true){
     if(turnoPrimeiro == true){
-      std::cout << "Vez do Jogador 1."  << '\n';
-      std::cout << "Indique onde quer jogar: " << '\n';
-      gets(jogada);
+      std::cout << "Vez do Jogador 1."  << "\n";
+      std::cout << "Indique onde quer jogar: " << "\n";
+      scanf("%s", &jogada[0]);
       jogaX(jogada);
       turnoPrimeiro = false;
-      jogada[0] = "";
+      // jogada[0] = " ";
       if(isVitoria()){
-        std::cout << "Jogador 1 ganhou" << '\n';
+        std::cout << "Jogador 1 ganhou" << "\n";
       }
     }
     else {
-      std::cout << "Vez do Jogador 2."  << '\n';
-      std::cout << "Indique onde quer jogar: " << '\n';
-      gets(jogada);
+      std::cout << "Vez do Jogador 2."  << "\n";
+      std::cout << "Indique onde quer jogar: " << "\n";
+      scanf("%s", &jogada[0]);
       jogaO(jogada);
       turnoPrimeiro = true;
-      jogada[0] = "";
+      // jogada[0] = " ";
       if(isVitoria()){
-        std::cout << "Jogador 2 ganhou" << '\n';
+        std::cout << "Jogador 2 ganhou" << "\n";
       }
     }
     exibeJogo();
@@ -62,6 +62,7 @@ int main() {
 
   return 0;
 }
+
 
 bool isVitoria(){
   if(((matriz[0][0] == "O") && (matriz[0][1] == "O") && (matriz[0][2] == "O")) || // primeira horizontal
@@ -90,7 +91,7 @@ bool isVitoria(){
      return false;
 }
 
-void jogaX(char posicao[]){
+void jogaX(string posicao){
 
   if(posicao == "a"){
     matriz[0][0] = "X";
@@ -122,7 +123,7 @@ void jogaX(char posicao[]){
 
 }
 
-void jogaO(char posicao[]){
+void jogaO(string posicao){
 
   if(posicao == "a"){
     matriz[0][0] = "O";
@@ -157,9 +158,9 @@ void jogaO(char posicao[]){
 void exibeJogo() {
   for (int i = 0; i < 3; i++) {
     for (int j = 0; j < 3; j++) {
-      std::cout << matriz[i][j];
+      printf("%s", &matriz[i][j]);
     }
-    std::cout << '\n';
+    std::cout << "\n";
   }
 }
 
@@ -180,7 +181,7 @@ void iniciaMatriz(){
 void iniciaJogo(char jogador1[], char jogador2[]){
   printf("%s\n", "Bem vindo ao jogo da Velha!");
   printf("%s\n", "Digite o nome do Jogador 1: ");
-  gets(jogador1);
+  scanf("%s", &jogador1);
   printf("%s\n", "Digite o nome do Jogador 2: ");
-  gets(jogador2);
+  scanf("%s", &jogador2);
 }
