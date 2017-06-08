@@ -42,8 +42,11 @@ bool isVitoria(){
      ((matriz[2][0] == 'O') && (matriz[2][1] == 'O') && (matriz[2][2] == 'O')) || // terceira horizontal
      ((matriz[2][0] == 'X') && (matriz[2][1] == 'X') && (matriz[2][2] == 'X')) ||
 
-     ((matriz[0][0] == 'O') && (matriz[1][1] == 'O') && (matriz[2][2] == 'O')) || // diagonal
+     ((matriz[0][0] == 'O') && (matriz[1][1] == 'O') && (matriz[2][2] == 'O')) || // diagonal principal
      ((matriz[0][0] == 'X') && (matriz[1][1] == 'X') && (matriz[2][2] == 'X')) ||
+     
+     ((matriz[0][2] == 'O') && (matriz[1][1] == 'O') && (matriz[2][0] == 'O')) || // diagonal secundaria
+     ((matriz[0][2] == 'X') && (matriz[1][1] == 'X') && (matriz[2][0] == 'X')) ||
 
      ((matriz[0][0] == 'O') && (matriz[1][0] == 'O') && (matriz[2][0] == 'O')) || // primeira vertical
      ((matriz[0][0] == 'X') && (matriz[1][0] == 'X') && (matriz[2][0] == 'X')) ||
@@ -73,60 +76,60 @@ void menuInicio(){
 }
 
 void jogadaX(char posicao[]){
-  if(posicao == "a"){
+  if(posicao[0] == 'a'){
     matriz[0][0] = 'X';
   }
-  if(posicao == "b"){
+  if(posicao[0] == 'b'){
     matriz[0][1] = 'X';
   }
-  if(posicao == "c"){
+  if(posicao[0] == 'c'){
     matriz[0][2] = 'X';
   }
-  if(posicao == "d"){
+  if(posicao[0] == 'd'){
     matriz[1][0] = 'X';
   }
-  if(posicao == "e"){
+  if(posicao[0] == 'e'){
     matriz[1][1] = 'X';
   }
-  if(posicao == "f"){
+  if(posicao[0] == 'f'){
     matriz[1][2] = 'X';
   }
-  if(posicao == "g"){
+  if(posicao[0] == 'g'){
     matriz[2][0] = 'X';
   }
-  if(posicao == "h"){
+  if(posicao[0] == 'h'){
     matriz[2][1] = 'X';
   }
-  if(posicao == "i"){
+  if(posicao[0] == 'i'){
     matriz[2][2] = 'X';
   }
 }
 void jogadaO(char posicao[]){
-  if(posicao == "a"){
+  if(posicao[0] == 'a'){
     matriz[0][0] = 'O';
   }
-  if(posicao == "b"){
+  if(posicao[0] == 'b'){
     matriz[0][1] = 'O';
   }
-  if(posicao == "c"){
+  if(posicao[0] == 'c'){
     matriz[0][2] = 'O';
   }
-  if(posicao == "d"){
+  if(posicao[0] == 'd'){
     matriz[1][0] = 'O';
   }
-  if(posicao == "e"){
+  if(posicao[0] == 'e'){
     matriz[1][1] = 'O';
   }
-  if(posicao == "f"){
+  if(posicao[0] == 'f'){
     matriz[1][2] = 'O';
   }
-  if(posicao == "g"){
+  if(posicao[0] == 'g'){
     matriz[2][0] = 'O';
   }
-  if(posicao == "h"){
+  if(posicao[0] == 'h'){
     matriz[2][1] = 'O';
   }
-  if(posicao == "i"){
+  if(posicao[0] == 'i'){
     matriz[2][2] = 'O';
   }
 }
