@@ -26,9 +26,10 @@ void iniciaMatriz(){
 }
 void imprimeMatriz(){
   for (int i = 0; i < 3; i++) {
-	for (int j = 0; j < 3; j++) {
-	  std::cout << matriz[i][j] << ' ';
-	}
+     std::cout << "      ";
+     for (int j = 0; j < 3; j++) {
+	      std::cout << matriz[i][j] << ' ';
+	     }
 	std::cout << '\n';
   }
 }
@@ -44,7 +45,7 @@ bool isVitoria(){
 
 	 ((matriz[0][0] == 'O') && (matriz[1][1] == 'O') && (matriz[2][2] == 'O')) || // diagonal principal
 	 ((matriz[0][0] == 'X') && (matriz[1][1] == 'X') && (matriz[2][2] == 'X')) ||
-	 
+
 	 ((matriz[0][2] == 'O') && (matriz[1][1] == 'O') && (matriz[2][0] == 'O')) || // diagonal secundaria
 	 ((matriz[0][2] == 'X') && (matriz[1][1] == 'X') && (matriz[2][0] == 'X')) ||
 
@@ -63,18 +64,14 @@ bool isVitoria(){
 }
 void menuInicio(){
   std::cout << "Bem vindo ao jogo da Velha!" << '\n';
-  
+
   std::cout << "Digite o nome do Jogador 1" << '\n';
   gets(jogador1);
-  std::cout << "Jogador 1 joga com X" << '\n';
- 
-  system("clear");
-  
+  std::cout << jogador1 << " joga com X" << '\n';
+
   std::cout << "Digite o nome do Jogador 2" << '\n';
   gets(jogador2);
-  std::cout << "Jogador 2 joga com O" << '\n';
-  
-  system("clear");
+  std::cout << jogador2 << " joga com X" << '\n';
 
   std::cout << '\n';
   std::cout << "Estas sao as Posicoes que estao disponiveis para jogo." << '\n';
@@ -110,7 +107,6 @@ void jogadaX(char posicao[]){
 	matriz[2][2] = 'X';
   }
 }
-
 void jogadaO(char posicao[]){
   if(posicao[0] == 'a'){
 	matriz[0][0] = 'O';
@@ -148,15 +144,13 @@ int main() {
   while (true) {
 	if(isVezPrimeiro){
 
-	  std::cout << "Jogador 1 escolha uma posicao para jogar." << '\n';
+	  std::cout << jogador1 << " escolha uma posicao para jogar." << '\n';
 	  gets(jogada);
 	  jogadaX(jogada);
-	  
-	  system("clear");
 
 	  imprimeMatriz();
 	  if(isVitoria()){
-		std::cout << "Vitoria!! Jogador 1 e o Vencedor!" << '\n';
+		std::cout << "Vitoria!! " << jogador1 << " e o Vencedor!" << '\n';
 		break;
 	  }
 	  if(jogada[0] == 's'){
@@ -166,15 +160,13 @@ int main() {
 	}
 	else {
 
-	  std::cout << "Jogador 2 escolha uma posicao para jogar." << '\n';
+	  std::cout << jogador2 << " escolha uma posicao para jogar." << '\n';
 	  gets(jogada);
-	  jogadaO(jogada);
-	  
-	  system("clear");
+    jogadaO(jogada);
 
 	  imprimeMatriz();
 	  if(isVitoria()){
-		std::cout << "Vitoria!! Jogador 2 e o Vencedor!" << '\n';
+		std::cout << "Vitoria!! " << jogador2 << " e o Vencedor!" << '\n';
 		break;
 	  }
 	  if(jogada[0] == 's'){
