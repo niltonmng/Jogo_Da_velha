@@ -306,7 +306,9 @@ bool duasPecasEmLinhaO(){
 
 void bloquearX(){
   if(matriz[0][0] == 'X' && matriz[0][1] == 'X'){
-      std::cout << "Deve jogar em c" << '\n';
+    if(matriz[0][2] == 'c'){
+      std::cout << "Deve jogar em c" << '\n'; // fazer este condicional para todos os outros abaixo e para os dois metodos acima tb
+    }
   }
   if(matriz[1][0] == 'X' && matriz[1][1] == 'X'){
       std::cout << "Deve jogar em f" << '\n';
