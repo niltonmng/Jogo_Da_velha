@@ -71,7 +71,7 @@ void menuInicio(){
 
   std::cout << "Digite o nome do Jogador 2" << '\n';
   gets(jogador2);
-  std::cout << jogador2 << " joga com X" << '\n';
+  std::cout << jogador2 << " joga com O" << '\n';
 
   std::cout << '\n';
   std::cout << "Estas sao as Posicoes que estao disponiveis para jogo." << '\n';
