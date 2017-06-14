@@ -264,6 +264,172 @@ void duasPecasEmLinhaO(){
   }
 }
 
+bool bloquearX(){
+  if(matriz[0][0] == 'X' && matriz[0][1] == 'X'){
+      std::cout << "Deve jogar em c" << '\n';
+      return true;
+  }
+  if(matriz[1][0] == 'X' && matriz[1][1] == 'X'){
+      std::cout << "Deve jogar em f" << '\n';
+      return true;
+  }
+  if(matriz[2][0] == 'X' && matriz[2][1] == 'X'){
+      std::cout << "Deve jogar em i" << '\n';
+      return true;
+  }
+
+  if(matriz[0][1] == 'X' && matriz[0][2] == 'X'){
+      std::cout << "Deve jogar em a" << '\n';
+      return true;
+  }
+  if(matriz[1][1] == 'X' && matriz[1][2] == 'X'){
+      std::cout << "Deve jogar em d" << '\n';
+      return true;
+  }
+  if(matriz[2][1] == 'X' && matriz[2][2] == 'X'){
+      std::cout << "Deve jogar em g" << '\n';
+      return true;
+  }
+
+  if(matriz[0][0] == 'X' && matriz[0][2] == 'X'){
+      std::cout << "Deve jogar em b" << '\n';
+      return true;
+  }
+  if(matriz[1][0] == 'X' && matriz[1][2] == 'X'){
+      std::cout << "Deve jogar em e" << '\n';
+      return true;
+  }
+  if(matriz[2][0] == 'X' && matriz[2][2] == 'X'){
+      std::cout << "Deve jogar em h" << '\n';
+      return true;
+  }
+
+
+
+  if(matriz[0][0] == 'X' && matriz[1][0] == 'X'){
+      std::cout << "Deve jogar em g" << '\n';
+      return true;
+  }
+  if(matriz[0][1] == 'X' && matriz[1][1] == 'X'){
+      std::cout << "Deve jogar em h" << '\n';
+      return true;
+  }
+  if(matriz[2][0] == 'X' && matriz[2][1] == 'X'){
+      std::cout << "Deve jogar em i" << '\n';
+      return true;
+  }
+
+  if(matriz[1][0] == 'X' && matriz[2][0] == 'X'){
+      std::cout << "Deve jogar em a" << '\n';
+      return true;
+  }
+  if(matriz[1][1] == 'X' && matriz[2][1] == 'X'){
+      std::cout << "Deve jogar em b" << '\n';
+      return true;
+  }
+  if(matriz[1][2] == 'X' && matriz[2][2] == 'X'){
+      std::cout << "Deve jogar em c" << '\n';
+      return true;
+  }
+
+  if(matriz[0][0] == 'X' && matriz[2][0] == 'X'){
+      std::cout << "Deve jogar em d" << '\n';
+      return true;
+  }
+  if(matriz[0][1] == 'X' && matriz[2][1] == 'X'){
+      std::cout << "Deve jogar em e" << '\n';
+      return true;
+  }
+  if(matriz[0][2] == 'X' && matriz[2][2] == 'X'){
+      std::cout << "Deve jogar em f" << '\n';
+      return true;
+  }
+
+  return false;
+}
+bool bloquearO(){
+  if(matriz[0][0] == 'O' && matriz[0][1] == 'O'){
+      std::cout << "Deve jogar em c" << '\n';
+      return true;
+  }
+  if(matriz[1][0] == 'O' && matriz[1][1] == 'O'){
+      std::cout << "Deve jogar em f" << '\n';
+      return true;
+  }
+  if(matriz[2][0] == 'O' && matriz[2][1] == 'O'){
+      std::cout << "Deve jogar em i" << '\n';
+      return true;
+  }
+
+  if(matriz[0][1] == 'O' && matriz[0][2] == 'O'){
+      std::cout << "Deve jogar em a" << '\n';
+      return true;
+  }
+  if(matriz[1][1] == 'O' && matriz[1][2] == 'O'){
+      std::cout << "Deve jogar em d" << '\n';
+      return true;
+  }
+  if(matriz[2][1] == 'O' && matriz[2][2] == 'O'){
+      std::cout << "Deve jogar em g" << '\n';
+      return true;
+  }
+
+  if(matriz[0][0] == 'O' && matriz[0][2] == 'O'){
+      std::cout << "Deve jogar em b" << '\n';
+      return true;
+  }
+  if(matriz[1][0] == 'O' && matriz[1][2] == 'O'){
+      std::cout << "Deve jogar em e" << '\n';
+      return true;
+  }
+  if(matriz[2][0] == 'O' && matriz[2][2] == 'O'){
+      std::cout << "Deve jogar em h" << '\n';
+      return true;
+  }
+
+
+
+  if(matriz[0][0] == 'O' && matriz[1][0] == 'O'){
+      std::cout << "Deve jogar em g" << '\n';
+      return true;
+  }
+  if(matriz[0][1] == 'O' && matriz[1][1] == 'O'){
+      std::cout << "Deve jogar em h" << '\n';
+      return true;
+  }
+  if(matriz[2][0] == 'O' && matriz[2][1] == 'O'){
+      std::cout << "Deve jogar em i" << '\n';
+      return true;
+  }
+
+  if(matriz[1][0] == 'O' && matriz[2][0] == 'O'){
+      std::cout << "Deve jogar em a" << '\n';
+      return true;
+  }
+  if(matriz[1][1] == 'O' && matriz[2][1] == 'O'){
+      std::cout << "Deve jogar em b" << '\n';
+      return true;
+  }
+  if(matriz[1][2] == 'O' && matriz[2][2] == 'O'){
+      std::cout << "Deve jogar em c" << '\n';
+      return true;
+  }
+
+  if(matriz[0][0] == 'O' && matriz[2][0] == 'O'){
+      std::cout << "Deve jogar em d" << '\n';
+      return true;
+  }
+  if(matriz[0][1] == 'O' && matriz[2][1] == 'O'){
+      std::cout << "Deve jogar em e" << '\n';
+      return true;
+  }
+  if(matriz[0][2] == 'O' && matriz[2][2] == 'O'){
+      std::cout << "Deve jogar em f" << '\n';
+      return true;
+  }
+
+  return false;
+}
 
 int main() {
   iniciaMatriz();
@@ -273,7 +439,13 @@ int main() {
 	if(isVezPrimeiro){
 
 	  std::cout << jogador1 << " escolha uma posicao para jogar." << '\n';
-    duasPecasEmLinhaX();
+
+    if(bloquearO()){
+      // should do nothing!
+    } else {
+        duasPecasEmLinhaX();
+    }
+
 	  gets(jogada);
 	  jogadaX(jogada);
 
@@ -290,7 +462,13 @@ int main() {
 	else {
 
 	  std::cout << jogador2 << " escolha uma posicao para jogar." << '\n';
-    duasPecasEmLinhaO();
+
+    if(bloquearX()){
+      // should do nothing
+    } else {
+      duasPecasEmLinhaO();
+    }
+
     gets(jogada);
     jogadaO(jogada);
 
