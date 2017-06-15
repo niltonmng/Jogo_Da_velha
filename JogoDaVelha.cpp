@@ -209,7 +209,7 @@ bool duasPecasEmLinhaX(){
 			return true;
 		}
 	}
-	if(matriz[0][2] == 'X' && matriz[2][1] == 'X'){
+	if(matriz[0][2] == 'X' && matriz[1][2] == 'X'){
 		if(matriz[2][2] == 'i'){
 			std::cout << "Deve jogar em i" << '\n';
 			return true;
@@ -328,7 +328,7 @@ bool duasPecasEmLinhaO(){
 			return true;
 		}
 	}
-	if(matriz[0][2] == 'O' && matriz[2][1] == 'O'){
+	if(matriz[0][2] == 'O' && matriz[1][2] == 'O'){
 		if(matriz[2][2] == 'i'){
 			std::cout << "Deve jogar em i" << '\n';
 			return true;
@@ -437,7 +437,7 @@ void bloquearX(){
 			std::cout << "Deve jogar em h" << '\n';
 		}
 	}
-	if(matriz[0][2] == 'X' && matriz[2][1] == 'X'){
+	if(matriz[0][2] == 'X' && matriz[1][2] == 'X'){
 		if(matriz[2][2] == 'i'){
 			std::cout << "Deve jogar em i" << '\n';
 		}
@@ -536,7 +536,7 @@ void bloquearO(){
 			std::cout << "Deve jogar em h" << '\n';
 		}
 	}
-	if(matriz[0][2] == 'O' && matriz[2][1] == 'O'){
+	if(matriz[0][2] == 'O' && matriz[1][2] == 'O'){
 		if(matriz[2][2] == 'i'){
 			std::cout << "Deve jogar em i" << '\n';
 		}
