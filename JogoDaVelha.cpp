@@ -67,10 +67,13 @@ void menuInicio(){
 
 	std::cout << "Digite o nome do Jogador 1" << '\n';
 	gets(jogador1);
-	std::cout << jogador1 << " joga com X" << '\n';
-
+	
 	std::cout << "Digite o nome do Jogador 2" << '\n';
 	gets(jogador2);
+	
+	system("clear");
+	
+	std::cout << jogador1 << " joga com X" << '\n';	
 	std::cout << jogador2 << " joga com O" << '\n';
 
 	std::cout << '\n';
@@ -615,10 +618,10 @@ void bloquearO(){
 	}
 }
 
-bool deuVelha(){
+bool deuVelha(bool isVitoria){
 	if(matriz[0][0] != 'a' && matriz[0][1] != 'b'  && matriz[0][2] != 'c' &&
 			matriz[1][0] != 'd' && matriz[1][1] != 'e'  && matriz[1][2] != 'f' &&
-			matriz[2][0] != 'g' && matriz[2][1] != 'h'  && matriz[2][2] != 'i') {
+			matriz[2][0] != 'g' && matriz[2][1] != 'h'  && matriz[2][2] != 'i' && isVitoria == false) {
 		return true;
 	}
 	return false;
@@ -628,7 +631,7 @@ int main() {
 	iniciaMatriz();
 	menuInicio();
 
-	while (!deuVelha()) {
+	while (!deuVelha(isVitoria())) {
 		if(isVezPrimeiro){
 
 			std::cout << jogador1 << " escolha uma posicao para jogar." << '\n';
@@ -641,10 +644,12 @@ int main() {
 
 			gets(jogada);
 			jogadaX(jogada);
+			
+			system("clear");
 
 			imprimeMatriz();
 			if(isVitoria()){
-				std::cout << "Vitoria!! " << jogador1 << " e o Vencedor!" << '\n';
+				std::cout << "Vitoria!! " << jogador1 << " eh o Vencedor!" << '\n';
 				break;
 			}
 			isVezPrimeiro = false;
@@ -661,6 +666,8 @@ int main() {
 
 			gets(jogada);
 			jogadaO(jogada);
+			
+			system("clear");
 
 			imprimeMatriz();
 			if(isVitoria()){
@@ -671,7 +678,7 @@ int main() {
 		}
 	}
 
-	if(deuVelha()){
+	if(deuVelha(isVitoria())){
 	 	std::cout << "\n Deu Velha!!" << '\n';
 	}
 	return 0;
