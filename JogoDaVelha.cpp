@@ -628,13 +628,13 @@ int main() {
 	iniciaMatriz();
 	menuInicio();
 
-	while (true) {
+	while (!deuVelha()) {
 		if(isVezPrimeiro){
 
 			std::cout << jogador1 << " escolha uma posicao para jogar." << '\n';
 
 			if(duasPecasEmLinhaX()){
-				// should do nothing!
+				// Nao faz nada!
 			} else {
 				bloquearO();
 			}
@@ -647,10 +647,6 @@ int main() {
 				std::cout << "Vitoria!! " << jogador1 << " e o Vencedor!" << '\n';
 				break;
 			}
-			if(deuVelha()){
-				std::cout << "Deu velha!" << '\n';
-				break;
-			}
 			isVezPrimeiro = false;
 		}
 		else {
@@ -658,7 +654,7 @@ int main() {
 			std::cout << jogador2 << " escolha uma posicao para jogar." << '\n';
 
 			if(duasPecasEmLinhaO()){
-				// should do nothing
+				// Nao faz nada!
 			} else {
 				bloquearX();
 			}
@@ -671,12 +667,12 @@ int main() {
 				std::cout << "Vitoria!! " << jogador2 << " e o Vencedor!" << '\n';
 				break;
 			}
-			if(deuVelha()){
-				std::cout << "Deu Velha!!" << '\n';
-				break;
-			}
 			isVezPrimeiro = true;
 		}
+	}
+
+	if(deuVelha()){
+	 	std::cout << "\n Deu Velha!!" << '\n';
 	}
 	return 0;
 }
