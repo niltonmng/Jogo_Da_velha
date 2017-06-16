@@ -138,6 +138,26 @@ void jogadaO(char posicao[]){
 }
 
 bool duasPecasEmLinhaX(){
+
+	if(matriz[0][0] == 'X' && matriz[0][2] == 'X' && matriz[2][0] == 'X'){
+		std::cout << "Triangulo detectado! Possivel vitoria em b, d, e ." << '\n';
+		return true;
+	}
+	if(matriz[0][0] == 'X' && matriz[2][0] == 'X' && matriz[2][2] == 'X'){
+		std::cout << "Triangulo detectado! Possivel vitoria em d, h, e ." << '\n';
+		return true;
+	}
+	if(matriz[0][2] == 'X' && matriz[2][0] == 'X' && matriz[2][2] == 'X'){
+		std::cout << "Triangulo detectado! Possivel vitoria em f, h, e ." << '\n';
+		return true;
+	}
+	if(matriz[0][0] == 'X' && matriz[0][2] == 'X' && matriz[2][2] == 'X'){
+		std::cout << "Triangulo detectado! Possivel vitoria em f, e, b ." << '\n';
+		return true;
+	}
+
+	// triangulo acima
+
 	if(matriz[0][0] == 'X' && matriz[0][1] == 'X'){
 		if(matriz[0][2] == 'c'){
 			std::cout << "Deve jogar em c" << '\n';
@@ -257,6 +277,26 @@ bool duasPecasEmLinhaX(){
 	return false;
 }
 bool duasPecasEmLinhaO(){
+
+	if(matriz[0][0] == 'O' && matriz[0][2] == 'O' && matriz[2][0] == 'O'){
+		std::cout << "Triangulo detectado! Possivel vitoria em b, d, e ." << '\n';
+		return true;
+	}
+	if(matriz[0][0] == 'O' && matriz[2][0] == 'O' && matriz[2][2] == 'O'){
+		std::cout << "Triangulo detectado! Possivel vitoria em d, h, e ." << '\n';
+		return true;
+	}
+	if(matriz[0][2] == 'O' && matriz[2][0] == 'O' && matriz[2][2] == 'O'){
+		std::cout << "Triangulo detectado! Possivel vitoria em f, h, e ." << '\n';
+		return true;
+	}
+	if(matriz[0][0] == 'O' && matriz[0][2] == 'O' && matriz[2][2] == 'O'){
+		std::cout << "Triangulo detectado! Possivel vitoria em f, e, b ." << '\n';
+		return true;
+	}
+
+ // triangulo acima
+
 	if(matriz[0][0] == 'O' && matriz[0][1] == 'O'){
 		if(matriz[0][2] == 'c'){
 			std::cout << "Deve jogar em c" << '\n';
