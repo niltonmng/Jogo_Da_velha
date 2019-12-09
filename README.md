@@ -2,6 +2,6 @@
 
 Projeto da disciplina de Paradigmas de Linguagem de Programação.
 
-*C
-*Haskell
-*Prolog
+  * C
+  * Haskell
+  * Prolog
